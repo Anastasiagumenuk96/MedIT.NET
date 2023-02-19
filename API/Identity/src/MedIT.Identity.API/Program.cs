@@ -1,23 +1,26 @@
+using MedIT.Identity.API;
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+var services = builder.Services;
+services.AddIdentityApi();
+
+services.AddControllers();
+services.AddSwaggerGen(x =>
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity", Version = "v1" }));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "Identity"));
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
 
 app.Run();

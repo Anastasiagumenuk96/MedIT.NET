@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 var services = builder.Services;
-services.AddIdentityApi();
+services.AddIdentityApi(builder.Configuration);
 
 services.AddControllers();
 services.AddSwaggerGen(x =>

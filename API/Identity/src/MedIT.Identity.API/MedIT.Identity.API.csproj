@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MedIT.Identity.Infrastructure\MedIT.Identity.Infrastructure.csproj" />
+    <ProjectReference Include="..\MedIT.Identity.Infrastructure.Data\MedIT.Identity.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\MedIT.Identity.Infrastructure\MedIT.Identity.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

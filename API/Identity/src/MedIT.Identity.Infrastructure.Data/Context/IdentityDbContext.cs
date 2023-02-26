@@ -1,4 +1,4 @@
-﻿using MedIT.Identity.Application.Interfaces;
+﻿using MedIT.Identity.Application.Interfaces.Infrastructure.Data;
 using MedIT.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

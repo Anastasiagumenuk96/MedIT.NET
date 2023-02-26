@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MedIT.Identity.Infrastructure.Data.Mapping;
+namespace MedIT.Identity.Infrastructure.Data.Context.Mapping;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {

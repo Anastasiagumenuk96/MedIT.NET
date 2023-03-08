@@ -31,7 +31,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, IdentityR
 
     public async Task<IdentityResult> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
-        var user = _mapper.Map<User>(request);
+        var user = _mapper.Map<User>(command);
 
         if (user is not null)
         {

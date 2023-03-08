@@ -1,4 +1,5 @@
-﻿using MedIT.Identity.Infrastructure;
+﻿using MedIT.Identity.Application;
+using MedIT.Identity.Infrastructure;
 using MedIT.Identity.Infrastructure.Data;
 
 namespace MedIT.Identity.API;
@@ -9,6 +10,7 @@ public static class DependencyInjection
     {
         services.AddInfrastructureData(configuration);
         services.AddInfrastructure();
+        services.AddApplication();
 
         return services;
     }

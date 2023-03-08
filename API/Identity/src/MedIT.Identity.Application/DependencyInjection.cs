@@ -6,9 +6,12 @@ namespace MedIT.Identity.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        var executingAssembly = Assembly.GetExecutingAssembly();
+
+        services.AddAutoMapper(executingAssembly);
+        services.AddMediatR(executingAssembly);
 
         return services;
     }
